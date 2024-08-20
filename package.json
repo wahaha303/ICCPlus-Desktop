@@ -1,0 +1,41 @@
+{
+	"name": "ICCPlus",
+	"version": "1.0.0",
+	"main": "main.js",
+	"build": {
+		"appId": "com.iccplus.app",
+		"files": [
+			"js/**/*",
+			"css/**/*",
+			"main.js",
+			"index.html"
+		],
+		"publish": [
+			{
+				"provider": "github",
+				"owner": "wahaha303",
+				"repo": "ICCPlus-Desktop"
+			}
+		],
+		"directories": {
+			"buildResources": "assets"
+		},
+		"icon": "assets/icons/icon"
+	},
+	"scripts": {
+		"start": "electron .",
+		"build": "electron-builder",
+		"deploy": "elctron-builder build --win --publish always"
+	},
+	"devDependencies": {
+		"electron": "^25.3.1",
+		"electron-builder": "^24.13.3"
+	},
+	"keywords": [],
+	"author": "wahaha303",
+	"license": "ISC",
+	"description": "ICCPlus",
+	"dependencies": {
+		"electron-updater": "^6.2.1"
+	}
+}
