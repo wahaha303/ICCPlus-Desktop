@@ -4,8 +4,7 @@
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
-		"build": "electron-builder --config build.js --publish never",
-		"deploy": "electron-builder --config build.js --publish always"
+		"build": "electron-builder --config build.js"
 	},
 	"devDependencies": {
 		"electron": "^25.3.1",
