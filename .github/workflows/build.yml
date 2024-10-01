@@ -19,6 +19,8 @@ jobs:
 
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
+        env:
+          AUTO_UPDATE_TOKEN: ${{ secrets.AUTO_UPDATE_TOKEN }}   
         with:
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
