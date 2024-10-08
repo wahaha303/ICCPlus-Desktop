@@ -22750,9 +22750,9 @@
 						e.$set(e.app, "compODG", {});
 						e.$set(e.app, "compRDG", {});
 						e.$set(e.app, "compGR", {});
-						e.app.pointTypes.forEach(pt => {e.$set(e.app.pointTypeMap, pt.id, pt.startingSum)});
-						e.app.words.forEach(w => {e.$set(e.app.wordMap, w.id, w.replaceText)});
-						e.app.rows.forEach(row => {row.objects.filter(object => object.isMultipleUseVariable).forEach(o => {e.$set(e.app.objectMap, o.id, o.multipleUseVariable)})});
+						if ("undefined" !== typeof e.app.pointTypes) e.app.pointTypes.forEach(pt => {e.$set(e.app.pointTypeMap, pt.id, pt.startingSum)});
+						if ("undefined" !== typeof e.app.words) e.app.words.forEach(w => {e.$set(e.app.wordMap, w.id, w.replaceText)});
+						if ("undefined" !== typeof e.app.rows) e.app.rows.forEach(row => {row.objects.filter(object => object.isMultipleUseVariable).forEach(o => {e.$set(e.app.objectMap, o.id, o.multipleUseVariable)})});
 						window.removeEventListener("keydown", e.$store.state.handleKeydown);
 						if (e.app.enableShortcut) window.addEventListener("keydown", e.$store.state.handleKeydown);
 						for (var b = 0; b < e.app.rows.length; b++) {
