@@ -22949,8 +22949,8 @@
                     },
                     imagesCount: function() {
                         for (var e = 0, t = 0; t < this.app.rows.length; t++) {
-                            0 != this.app.rows[t].image.length && (e += 1);
-                            for (var o = 0; o < this.app.rows[t].objects.length; o++) 0 != this.app.rows[t].objects[o].image.length && (e += 1)
+                            "undefined" !== typeof this.app.rows[t].image && 0 != this.app.rows[t].image.length && (e += 1);
+                            for (var o = 0; o < this.app.rows[t].objects.length; o++) "undefined" !== typeof this.app.rows[t].objects[o].image && 0 != this.app.rows[t].objects[o].image.length && (e += 1)
                         }
                         return e
                     },
@@ -22961,12 +22961,12 @@
                     },
                     biggestImage: function() {
                         for (var e, t, o, i = 0, s = 0; s < this.app.rows.length; s++)
-                            for (var r = 0; r < this.app.rows[s].objects.length; r++) 0 != this.app.rows[s].objects[r].image.length && (o = this.app.rows[s].objects[r].image.length - "data:image/png;base64,".length, t = 4 * Math.ceil(o / 3) * .5624896334383812, Math.floor(t / 1e3) > 400 && console.log(Math.floor(t / 1e3) + " KB, " + this.app.rows[s].objects[r].title), i < t && (i = t, e = this.app.rows[s].objects[r].title));
+                            for (var r = 0; r < this.app.rows[s].objects.length; r++) "undefined" !== typeof this.app.rows[s].objects[r].image && 0 != this.app.rows[s].objects[r].image.length && (o = this.app.rows[s].objects[r].image.length - "data:image/png;base64,".length, t = 4 * Math.ceil(o / 3) * .5624896334383812, Math.floor(t / 1e3) > 400 && console.log(Math.floor(t / 1e3) + " KB, " + this.app.rows[s].objects[r].title), i < t && (i = t, e = this.app.rows[s].objects[r].title));
                         return Math.floor(i / 1e3) + " KB, " + e
                     },
                     smallestImage: function() {
                         for (var e, t, o, i = 0, s = 0; s < this.app.rows.length; s++)
-                            for (var r = 0; r < this.app.rows[s].objects.length; r++) 0 != this.app.rows[s].objects[r].image.length && (o = this.app.rows[s].objects[r].image.length - "data:image/png;base64,".length, t = 4 * Math.ceil(o / 3) * .5624896334383812, (i > t || 0 == i) && (i = t, e = this.app.rows[s].objects[r].title));
+                            for (var r = 0; r < this.app.rows[s].objects.length; r++) "undefined" !== typeof this.app.rows[s].objects[r].image && 0 != this.app.rows[s].objects[r].image.length && (o = this.app.rows[s].objects[r].image.length - "data:image/png;base64,".length, t = 4 * Math.ceil(o / 3) * .5624896334383812, (i > t || 0 == i) && (i = t, e = this.app.rows[s].objects[r].title));
                         return Math.floor(i / 1e3) + " KB, " + e
                     }
                 },
@@ -32643,7 +32643,7 @@
                 data: function() {
                     return {
                         sanitizeArg: {
-                            allowedTags: ["address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4", "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div", "dl", "dt", "figcaption", "figure", "hr", "li", "main", "ol", "p", "pre", "ul", "a", "abbr", "b", "bdi", "bdo", "br", "cite", "code", "data", "dfn", "em", "i", "kbd", "mark", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var", "wbr", "caption", "col", "colgroup", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "font", "iframe"],
+                            allowedTags: ["address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4", "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div", "dl", "dt", "figcaption", "figure", "hr", "li", "main", "ol", "p", "pre", "ul", "a", "abbr", "b", "bdi", "bdo", "br", "cite", "code", "data", "dfn", "em", "i", "kbd", "mark", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var", "wbr", "caption", "col", "colgroup", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "font", "iframe", "img"],
                             allowedAttributes: false,
                             allowedStyles: false
                         }
@@ -32966,7 +32966,7 @@
                         },
                         posOrNeg: null,
                         sanitizeArg: {
-                            allowedTags: ["address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4", "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div", "dl", "dt", "figcaption", "figure", "hr", "li", "main", "ol", "p", "pre", "ul", "a", "abbr", "b", "bdi", "bdo", "br", "cite", "code", "data", "dfn", "em", "i", "kbd", "mark", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var", "wbr", "caption", "col", "colgroup", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "font", "iframe"],
+                            allowedTags: ["address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4", "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div", "dl", "dt", "figcaption", "figure", "hr", "li", "main", "ol", "p", "pre", "ul", "a", "abbr", "b", "bdi", "bdo", "br", "cite", "code", "data", "dfn", "em", "i", "kbd", "mark", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var", "wbr", "caption", "col", "colgroup", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "font", "iframe", "img"],
                             allowedAttributes: false,
                             allowedStyles: false
                         }
@@ -33120,7 +33120,7 @@
                             value: "3"
                         }],
                         sanitizeArg: {
-                            allowedTags: ["address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4", "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div", "dl", "dt", "figcaption", "figure", "hr", "li", "main", "ol", "p", "pre", "ul", "a", "abbr", "b", "bdi", "bdo", "br", "cite", "code", "data", "dfn", "em", "i", "kbd", "mark", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var", "wbr", "caption", "col", "colgroup", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "font", "iframe"],
+                            allowedTags: ["address", "article", "aside", "footer", "header", "h1", "h2", "h3", "h4", "h5", "h6", "hgroup", "main", "nav", "section", "blockquote", "dd", "div", "dl", "dt", "figcaption", "figure", "hr", "li", "main", "ol", "p", "pre", "ul", "a", "abbr", "b", "bdi", "bdo", "br", "cite", "code", "data", "dfn", "em", "i", "kbd", "mark", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var", "wbr", "caption", "col", "colgroup", "table", "tbody", "td", "tfoot", "th", "thead", "tr", "font", "iframe", "img"],
                             allowedAttributes: false,
                             allowedStyles: false
                         },
