@@ -29553,6 +29553,12 @@
 							if (ext == "json") {
 								const d = new TextDecoder('utf-8');
 								const txt = d.decode(t.result);
+								if ("undefined" !== typeof bgmPlayer.playerInfo.videoData && e.app.bgmIsPlaying) bgmPlayer.stopVideo();
+								clearInterval(e.app.bgmPlayInterval);
+								clearInterval(e.app.bgmTitleInterval);
+								clearInterval(e.app.bgmFadeInterval);
+								clearInterval(e.app.bgmFadeTimer);
+								clearInterval(e.app.autoSaveInterval);
 								e.$store.commit("loadApp", JSON.parse(txt));
 								e.initializeApp(e);
 							} else if (ext == "zip" || ext == "rar" || ext == "7z") {
@@ -29581,6 +29587,12 @@
 									Promise.all(p).then(function() {
 										if (jFile) {
 											jFile.async("string").then(function(f) {
+												if ("undefined" !== typeof bgmPlayer.playerInfo.videoData && e.app.bgmIsPlaying) bgmPlayer.stopVideo();
+												clearInterval(e.app.bgmPlayInterval);
+												clearInterval(e.app.bgmTitleInterval);
+												clearInterval(e.app.bgmFadeInterval);
+												clearInterval(e.app.bgmFadeTimer);
+												clearInterval(e.app.autoSaveInterval);
 												e.$store.commit("loadApp", JSON.parse(f));
 												e.initializeApp(e);
 												e.replaceImages(e);
@@ -29616,6 +29628,12 @@
 									const s = tr.objectStore('autoSave');
 									var sv = JSON.parse(o);
 									s.put(sv, '1');
+									if ("undefined" !== typeof bgmPlayer.playerInfo.videoData && e.app.bgmIsPlaying) bgmPlayer.stopVideo();
+									clearInterval(e.app.bgmPlayInterval);
+									clearInterval(e.app.bgmTitleInterval);
+									clearInterval(e.app.bgmFadeInterval);
+									clearInterval(e.app.bgmFadeTimer);
+									clearInterval(e.app.autoSaveInterval);
 									e.$store.commit("loadApp", sv);
 									e.initializeApp(e);
 								} else {
@@ -29626,6 +29644,12 @@
 								getRequest.onsuccess = function(o) {
 									const i = o.target.result;
 									if (i) {
+										if ("undefined" !== typeof bgmPlayer.playerInfo.videoData && e.app.bgmIsPlaying) bgmPlayer.stopVideo(); 
+										clearInterval(e.app.bgmPlayInterval);
+										clearInterval(e.app.bgmTitleInterval);
+										clearInterval(e.app.bgmFadeInterval);
+										clearInterval(e.app.bgmFadeTimer);
+										clearInterval(e.app.autoSaveInterval);
 										e.$store.commit("loadApp", i);
 										e.initializeApp(e);
 									} else {
