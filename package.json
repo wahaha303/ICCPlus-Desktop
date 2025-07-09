@@ -1,6 +1,6 @@
 {
 	"name": "ICCPlus",
-	"version": "2.0.4+hotfix.1",
+	"version": "2.0.4",
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
