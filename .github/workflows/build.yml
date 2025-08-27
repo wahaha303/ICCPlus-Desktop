@@ -7,28 +7,24 @@ on:
 
 permissions:
   contents: write
-  issues: write
-  pull-requests: write
 
 jobs:
   release:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [windows-latest]
+    runs-on: windows-latest
 
     steps:
-      - name: Check out Git repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Node.js, NPM and Yarn
+      - name: Set up Node.js
         uses: actions/setup-node@v4
-
-      - name: Build/release Electron app
-        uses: samuelmeuli/action-electron-builder@v1
-        env:
-          AUTO_UPDATE_TOKEN: ${{ secrets.AUTO_UPDATE_TOKEN }}   
         with:
-          github_token: ${{ secrets.github_token }}
-          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build app for Windows
+        run: npm run build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

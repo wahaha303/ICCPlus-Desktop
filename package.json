@@ -1,22 +1,22 @@
 {
 	"name": "iccplus_desktop",
-	"version": "2.3.2",
+	"version": "2.4.0",
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
 		"build": "electron-builder --config build.js --publish always"
 	},
 	"devDependencies": {
-		"electron": "^25.3.1",
-		"electron-builder": "^24.13.3"
+		"electron": "^37.3.1",
+		"electron-builder": "^26.0.12"
 	},
 	"keywords": [],
 	"author": "wahaha303",
 	"license": "ISC",
 	"description": "ICCPlus",
 	"dependencies": {
-		"dotenv": "^16.4.5",
-		"electron-log": "^5.1.7",
-		"electron-updater": "^6.2.1"
+		"dotenv": "^17.2.1",
+		"electron-log": "^5.4.3",
+		"electron-updater": "^6.6.2"
 	}
 }
