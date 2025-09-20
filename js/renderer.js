@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const updateContainer = document.getElementById('update-container');
     const downloadButton = document.getElementById('download-button');
+    const cancelButton = document.getElementById('cancel-button');
     const appDiv = document.getElementById('app');
 	const updatePageUrl = 'https://github.com/wahaha303/ICCPlus-Desktop/releases/latest';
 
@@ -15,6 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			appDiv.removeAttribute('style');
 			updateContainer.classList.add('hidden');
         });
+
+        cancelButton.addEventListener('click', () => {
+            appDiv.removeAttribute('style');
+			updateContainer.classList.add('hidden');
+        });
+
 		window.addEventListener('beforeunload', (event) => {
 			event.preventDefault();
 			event.returnValue = '';

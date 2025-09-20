@@ -35,13 +35,25 @@
     font-size: 1em;
     color: #fff;
     background-color: #007bff;
-    border: none;s
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #download-button:hover {
     background-color: #0056b3;
+}
+
+#cancel-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cancel-button:hover {
+    background-color: #dee2e6;
 }
 
 .hidden {
