@@ -1,4 +1,4 @@
-#update-container {
+.desktop-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.update-dialog {
+.desktop-dialog {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -19,13 +19,13 @@
     text-align: center;
 }
 
-.update-dialog h1 {
+.desktop-dialog h1 {
     margin: 0 0 10px;
     font-size: 1.5em;
     color: #333;
 }
 
-.update-dialog p {
+.desktop-dialog p {
     margin: 0 0 20px;
     color: #555;
 }

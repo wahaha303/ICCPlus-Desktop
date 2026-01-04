@@ -7,8 +7,10 @@ module.exports = {
 	files: [
 		'js/**/*',
 		'css/**/*',
+		'fonts/**/*',
 		'main.js',
 		'preload.js',
+		'server.js',
 		'index.html'
 	],
 	publish: [
@@ -22,7 +24,8 @@ module.exports = {
 	nsis: {
 		oneClick: false,
 		allowToChangeInstallationDirectory: true,
-		perMachine: true
+		perMachine: true,
+		runAfterFinish: false
 	},
 	win: {
 		verifyUpdateCodeSignature: true,

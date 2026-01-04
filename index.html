@@ -22,12 +22,19 @@
   </head>
   <body>
     <noscript><strong>We're sorry but the Interactive CYOA Creator doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
-	  <div id="update-container" class="hidden">
-      <div class="update-dialog">
+	  <div id="update-container" class="desktop-container hidden">
+      <div class="desktop-dialog">
         <h1>Update Available</h1>
         <p>A new version has been updated. Please click the button below to download.</p>
         <button id="download-button">Download</button>
         <button id="cancel-button">Not now</button>
+      </div>
+    </div>
+    <div id="migrate-container" class="desktop-container hidden">
+      <div class="desktop-dialog">
+        <h1>Initial Setup</h1>
+        <p>Setting up the initial configuration…</p>
+        <p>The app will restart when the process is complete.</p>
       </div>
     </div>
     <div id="app"></div>
