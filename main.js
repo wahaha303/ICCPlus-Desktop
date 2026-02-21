@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const log = require('electron-log');
 const Store = require('electron-store').default;
+const contextMenu = require('electron-context-menu').default;
 
 const store = new Store();
 const PORT = 42007;
@@ -69,6 +70,7 @@ function setupAutoUpdater() {
 }
 
 app.whenReady().then(async () => {
+    contextMenu();
     try {
         try {
             const result = await startServer(PORT);
