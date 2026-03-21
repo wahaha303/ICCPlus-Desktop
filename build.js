@@ -30,6 +30,7 @@ module.exports = {
 		runAfterFinish: false
 	},
 	win: {
+		icon: 'assets/icons/icon.ico',
 		verifyUpdateCodeSignature: true,
 		target: [
 			{

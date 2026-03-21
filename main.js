@@ -67,6 +67,13 @@ function setupAutoUpdater() {
         log.info('Skipping auto-updater on Linux because APPIMAGE is not set.');
         return;
     }
+
+	autoUpdater.setFeedURL({
+		provider: 'github',
+		owner: 'wahaha303',
+		repo: 'ICCPlus-Desktop',
+		token: process.env.AUTO_UPDATE_TOKEN
+	});
 	
 	autoUpdater.autoDownload = false;
     autoUpdater.checkForUpdates().catch((error) => {
