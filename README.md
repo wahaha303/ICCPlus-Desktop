@@ -11,7 +11,7 @@ Legacy Version: [ICC Plus](https://hikawasisters.neocities.org/ICCPlus/)<br>
 
 ## Desktop Build
 - Local Linux build: `npm run build:linux`
-- Cross-platform local default: `npm run build`
+- Default release build: `npm run build`
 - GitHub release publish from Linux CI: `npm run build:release:linux`
 
 ## Framework Migration
