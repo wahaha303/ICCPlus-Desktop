@@ -58,15 +58,20 @@ function setupAutoUpdater() {
     autoUpdater.logger = log;
     autoUpdater.logger.transports.file.level = 'info';
 
-    autoUpdater.setFeedURL({
-        provider: 'github',
-        owner: 'wahaha303',
-        repo: 'ICCPlus-Desktop',
-        token: process.env.AUTO_UPDATE_TOKEN
-    });
+    if (!app.isPackaged) {
+        log.info('Skipping auto-updater for unpackaged app.');
+        return;
+    }
+
+    if (process.platform === 'linux' && !process.env.APPIMAGE) {
+        log.info('Skipping auto-updater on Linux because APPIMAGE is not set.');
+        return;
+    }
 	
 	autoUpdater.autoDownload = false;
-    autoUpdater.checkForUpdates();
+    autoUpdater.checkForUpdates().catch((error) => {
+        log.error('Failed to check for updates:', error);
+    });
 }
 
 app.whenReady().then(async () => {

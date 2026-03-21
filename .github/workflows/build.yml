@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -22,9 +22,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build app for Windows
-        run: npm run build
+      - name: Build app for Linux
+        run: npm run build:release:linux
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
