@@ -9,6 +9,11 @@ Stable Version: [ICC Plus 2](https://hikawasisters.neocities.org/ICCPlus2/)<br><
 Legacy Version: [ICC Plus](https://hikawasisters.neocities.org/ICCPlus/)<br>
 <i>This version is no longer maintained.</i><br>
 
+## Desktop Build
+- Local Linux build: `npm run build:linux`
+- Default release build: `npm run build`
+- GitHub release publish from Linux CI: `npm run build:release:linux`
+
 ## Framework Migration
 - Rebuilt the entire codebase and migrated from Vue 2.6.11 to Svelte 5.
 - Enhanced overall performance and responsiveness.

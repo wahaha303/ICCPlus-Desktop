@@ -3,7 +3,9 @@ require('dotenv').config();
 
 module.exports = {
 	productName: 'ICC Plus 2',
+	executableName: 'icc-plus-2',
 	appId: 'com.iccplus.app',
+	artifactName: 'ICCPlus-Desktop-${version}-${os}-${arch}.${ext}',
 	files: [
 		'js/**/*',
 		'css/**/*',
@@ -28,6 +30,7 @@ module.exports = {
 		runAfterFinish: false
 	},
 	win: {
+		icon: 'assets/icons/icon.ico',
 		verifyUpdateCodeSignature: true,
 		target: [
 			{
@@ -42,5 +45,26 @@ module.exports = {
 	directories: {
 		buildResources: 'assets'
 	},
-	icon: 'assets/icons/icon.ico'
+	linux: {
+		category: 'Utility',
+		target: [
+			{
+				target: 'AppImage',
+				arch: [
+					'x64'
+				]
+			},
+			{
+				target: 'tar.gz',
+				arch: [
+					'x64'
+				]
+			}
+		],
+		icon: 'assets/icons/icon.png'
+	},
+	mac: {
+		icon: 'assets/icons/icon.icns'
+	},
+	icon: 'assets/icons/icon.png'
 };

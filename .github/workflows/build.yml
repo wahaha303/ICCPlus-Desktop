@@ -10,7 +10,18 @@ permissions:
 
 jobs:
   release:
-    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            build_command: npm run build:release:linux
+            label: Linux
+          - os: windows-latest
+            build_command: npm run build:release:windows
+            label: Windows
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout
@@ -22,9 +33,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build app for Windows
-        run: npm run build
+      - name: Build app for ${{ matrix.label }}
+        run: ${{ matrix.build_command }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
