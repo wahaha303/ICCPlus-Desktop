@@ -13,7 +13,9 @@ module.exports = {
 		'main.js',
 		'preload.js',
 		'server.js',
-		'index.html'
+		'index.html',
+		'web_viewer.zip',
+		'local_viewer.zip'
 	],
 	publish: [
 		{
