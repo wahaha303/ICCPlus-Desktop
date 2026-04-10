@@ -7,9 +7,11 @@
 		"build": "electron-builder --config build.js --publish never",
 		"build:windows": "electron-builder --win --config build.js --publish never",
 		"build:linux": "electron-builder --linux --config build.js --publish never",
+		"build:mac" : "electron-builder --mac --config build.js --publish never",
 		"build:release": "electron-builder --config build.js --publish always",
 		"build:release:windows": "electron-builder --win --config build.js --publish always",
-		"build:release:linux": "electron-builder --linux --config build.js --publish always"
+		"build:release:linux": "electron-builder --linux --config build.js --publish always",
+		"build:mac:release" : "electron-builder --mac --config build.js --publish always"
 	},
 	"devDependencies": {
 		"electron": "^37.3.1",

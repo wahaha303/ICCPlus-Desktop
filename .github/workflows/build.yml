@@ -20,6 +20,9 @@ jobs:
           - os: windows-latest
             build_command: npm run build:release:windows
             label: Windows
+          - os: macos-latest
+            build_command: npm run build:mac:release
+            label: macOS
 
     runs-on: ${{ matrix.os }}
 
