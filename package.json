@@ -1,6 +1,6 @@
 {
 	"name": "iccplus_desktop",
-	"version": "2.9.19",
+	"version": "2.9.20",
 	"main": "main.js",
 	"scripts": {
 		"start": "electron .",
